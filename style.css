@@ -1,7 +1,78 @@
+* {
+    box-sizing: border-box;
+    border: 1px solid blue;
+}
+
 body {
     background-color: grey;
 }
 
+.user-icon {
+    background-image: url("img/avatars.jpg");
+    background-size: 250px 168px;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+}
+
+.user1 { background-position: -24px -18px; }
+.user2 { background-position: -98px -18px; }
+.user3 { background-position: -179px -18px; }
+.user4 { background-position: -181px -95px; }
+
 .icon {
-    height: 1rem;
+    height: 1.2rem;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+    "sidebar header"
+    "sidebar content";
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.content {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "projects announcements"
+        "projects trending";
+}
+
+.your-projects {
+    grid-area: projects;
+}
+
+.project-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.announcements {
+    grid-area: announcements;
+}
+
+.announcement-card {
+    display: grid;
+}
+
+.trending {
+    grid-area: trending;
+}
+
+.trending-cards {
+    display: grid;
 }
