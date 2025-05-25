@@ -81,6 +81,57 @@ body {
     background-color: white;
 }
 
+.user-ref {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+}
+
+.user-title {
+    display: grid;
+    grid-area: 2/1/2/2;
+    grid-template-columns: 3rem 1fr;
+    grid-template-rows: 1rem 2rem;
+    grid-template-areas: 
+        "avatar message"
+        "avatar name";
+    padding: 1rem;
+}
+
+.user-title div {
+    grid-area: avatar;
+}
+
+.user-title p {
+    grid-area: message;
+    margin: 0;
+}
+
+.user-title h2 {
+    grid-area: name;
+    margin: 0;
+}
+
+.project-buttons ul {
+    list-style-type: none;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.project-buttons button {
+    color: white;
+    background-color: rgb(5, 130, 161);
+    padding: 0.5rem;
+    border-radius: 1rem;
+    width: 5rem;
+}
+
 .content {
     grid-area: content;
     display: grid;
@@ -89,18 +140,18 @@ body {
     grid-template-areas:
         "projects announcements"
         "projects trending";
-    
     background-color: rgb(216, 215, 215);
 }
 
 .your-projects {
     grid-area: projects;
+    padding: 1rem;
 }
 
 .project-cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat( minmax(500px, 1fr));
+    grid-template-rows: repeat(minmax(500px, 1fr));
     gap: 1rem;
 }
 
@@ -115,6 +166,7 @@ body {
 
 .project-cards p{
     margin: 0;
+    color: grey;
 }
 
 .project-cards h4{
@@ -132,14 +184,53 @@ body {
     grid-area: announcements;
 }
 
-.announcement-card {
-    display: grid;
+.announcement-cards {
+    background-color: white;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.announcement-cards .card > * {
+    margin: 0;
+}
+
+.announcements .card {
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.announcements .card p{
+    color: grey;
+    font-size: 0.8rem;
+}
+
+.announcements .card h4 {
+    font-size: 0.9rem;
 }
 
 .trending {
     grid-area: trending;
 }
 
-.trending-cards {
+.trending-cards .card {
     display: grid;
+    grid-template-columns: 3rem 1fr;
+    grid-template-rows: 1.5rem 1.5rem;
+    grid-template-areas:
+        "avatar name"
+        "avatar title";
+}
+
+.user-icon {
+    grid-area: avatar;
+}
+
+.user-name {
+    grid-area: name;
+    font-size: 0.8rem;
+}
+
+.user-title {
+    grid-area: title;
+    font-size: 0.7rem;
 }
